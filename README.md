@@ -39,7 +39,6 @@ root/
 │ └── vite.config.js
 └── README.md
 
-
 ## 🚀 Setup Instructions
 
 ### 🟠 Backend Setup (FastAPI)
@@ -48,63 +47,73 @@ root/
 2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
-   venv\Scripts\activate      # Windows
-   source venv/bin/activate   # Linux/Mac
-   Install the required dependencies:
+   source venv\Scripts\activate
+   pip install -r requirements.txt
    ```
-
+Install the required dependencies:
 bash
 Copy code
-``` bash
+
+```bash
 pip install fastapi uvicorn python-multipart opencv-python
 ```
+
 Place your sample video files inside the backend/data/ directory.
 
 Run the backend server:
 
 Copy code
-``` bash
+
+```bash
 uvicorn app.api_video_results:app --reload
 ```
+
 Verify the API by visiting:
 
 Copy code
-``` bash
+
+```bash
 http://127.0.0.1:8000/results
 ```
 
-
 ### 🟠 Frontend Setup (React with Vite)
+
 Install Node.js (version 16 or later) from https://nodejs.org/en/download/
 
 Initialize the project:
 
 Copy code
-``` bash
+
+```bash
 npm create vite@latest my-vms --template react
 cd my-vms
 npm install
-``` 
+```
+
 Create the API service in src/services/api.js:
 
 javascript
 Copy code
-``` bash
+
+```bash
 export async function getResults() {
 const response = await fetch("http://127.0.0.1:8000/results");
 return await response.json();
 }
 ```
+
 Implement the VideoStream.jsx component inside src/components/ and import it in App.jsx.
 
 Run the development server:
 
-
 Copy code
-``` bash
+
+```bash
 npm run dev
 ```
+
 Open the app in your browser:
-``` bash
+
+```bash
 http://localhost:5173
 ```
