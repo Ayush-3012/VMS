@@ -50,9 +50,9 @@ root/
    source venv\Scripts\activate
    pip install -r requirements.txt
    ```
-Install the required dependencies:
-bash
-Copy code
+   Install the required dependencies:
+   bash
+   Copy code
 
 ```bash
 pip install fastapi uvicorn python-multipart opencv-python
@@ -117,3 +117,6 @@ Open the app in your browser:
 ```bash
 http://localhost:5173
 ```
+
+Output
+![alt text](image.png)
